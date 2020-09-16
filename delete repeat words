@@ -1,0 +1,38 @@
+def solution(str1, str2):
+    # 输入数据：str1、str2均为字符串
+    # 输出： 将去除公共字符的str1和str2分别赋值给变量str1_new 和 str2_new
+    # 此处编写代码
+
+    str_1 = list(str1)
+    str_2 = list(str2)
+
+    str_re = []
+    for i in str_1:
+        for j in str_2:
+            if i == j:
+                str_re.append(i)
+    str_re = set(str_re)
+
+    for n in str_re: 
+        while n in str_1:
+            str_1.remove(n)
+        while n in str_2:
+            str_2.remove(n)
+
+    str1_new = ''.join(str_1)
+    str2_new = ''.join(str_2)
+
+    return [str1_new, str2_new]
+
+
+while(1):
+    str1_line = input()
+    str2_line = input()
+    if str1_line and str2_line:
+        str1_line = str1_line.strip()
+        str2_line = str2_line.strip()
+        results = solution(str1_line, str2_line)
+        for res in results:
+            print(res)
+    else:
+        break
