@@ -5,8 +5,9 @@
 def solution(vec1, vec2):
 
     #input
-    vec1 = vec1_line.split(' ')
-    vec2 = vec2_line.split(' ')
+    #vec1 = vec1_line.split(' ')
+    #vec2 = vec2_line.split(' ')
+    #have all ready done this in line37 38
     
     #multi
     matrix = []
