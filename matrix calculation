@@ -1,0 +1,44 @@
+# 输入两个数列
+# 转化为matrix
+# 计算对角线和
+
+def solution(vec1, vec2):
+
+    #input
+    vec1 = vec1_line.split(' ')
+    vec2 = vec2_line.split(' ')
+    
+    #multi
+    matrix = []
+    for i in vec1:
+        matrix_1D = []
+        for j in vec2:
+            value = int(j)*int(i) #i行j列元素
+            matrix_1D.append(value)
+        matrix.append(matrix_1D)
+
+    #sum
+    result = 0
+    count = len(matrix)
+    for i in range(count):
+        for j in range(count):
+            x = matrix[i]#提取第i行
+            y = x[j] #提取单个矩阵元素(i,j)
+            if i == j:
+                result = result + int(y)
+
+    return result, matrix
+
+
+while(1):
+    vec1_line = input()
+    vec2_line = input()
+    if vec1_line and vec2_line:
+        vec1 = [int(n) for n in vec1_line.strip().split(' ')]
+        vec2 = [int(n) for n in vec2_line.strip().split(' ')]
+        assert len(vec1) == len(vec2)
+        result, matrix = solution(vec1, vec2)
+        print(result)
+        print(matrix)
+    else:
+        break
